@@ -134,7 +134,7 @@ public class EjerciciosPropuestos1 {
             System.out.println("Hubo un sobrecupo en traumatologia");
         }
 
-    /*. Escriba un programa que muestre la siguiente tabla (tome en cuenta que 1
+    /*8. Escriba un programa que muestre la siguiente tabla (tome en cuenta que 1
     kilogramo es 2.2 libras):
     Kilogramos Libras
     1 2.2
@@ -151,7 +151,113 @@ public class EjerciciosPropuestos1 {
             System.out.printf("%-12d %.1f\n",kg ,libras);
         }
 
+    /*9. En un Centro Educativo Inicial se tienen n alumnos de 5 años. Para cada alumno se toma
+    los siguientes datos: Sexo (M, F), talla y peso.
+    Escribir un programa que determine:
+    ● El Promedio de tallas de niñas
+    ● El promedio de tallas de niños.
+    ● El promedio de pesos de niñas.
+    ● El promedio de pesos de niños*/
+        System.out.println("Ingrese la cantidad de niños: ");
+        int x = scn.nextInt();
+        double sumaTallasF = 0;
+        double sumaTallasM = 0;
+        double sumaPesosF = 0;
+        double sumaPesosM = 0;
 
+        // Contadores
+        int contadorNiñas = 0;
+        int contadorNiños = 0;
+
+        // Leer datos de cada alumno
+        for (int i = 0; i <= n; i++) {
+            System.out.println("Ingrese sexo (M/F), talla y peso del alumno " + (i+1) + ":");
+            String sexo = scn.next();
+            double talla = scn.nextDouble();
+            double peso = scn.nextDouble();
+
+            if (sexo.equalsIgnoreCase("F")) {
+                sumaTallasF += talla;
+                sumaPesosF += peso;
+                contadorNiñas++;
+            } else if (sexo.equalsIgnoreCase("M")) {
+                sumaTallasM += talla;
+                sumaPesosM += peso;
+                contadorNiños++;
+            } else {
+                System.out.println("Sexo no válido, use M o F");
+            }
+        }
+
+        // Calcular promedios
+        double promedioTallasNiñas = (contadorNiñas > 0) ? sumaTallasF / contadorNiñas : 0;
+        double promedioTallasNiños = (contadorNiños > 0) ? sumaTallasM / contadorNiños : 0;
+        double promedioPesosNiñas = (contadorNiñas > 0) ? sumaPesosF / contadorNiñas : 0;
+        double promedioPesosNiños = (contadorNiños > 0) ? sumaPesosM / contadorNiños : 0;
+
+        // Mostrar resultados
+        System.out.println("\nResultados:");
+        System.out.println("Promedio de tallas de niñas: " + promedioTallasNiñas);
+        System.out.println("Promedio de tallas de niños: " + promedioTallasNiños);
+        System.out.println("Promedio de pesos de niñas: " + promedioPesosNiñas);
+        System.out.println("Promedio de pesos de niños: " + promedioPesosNiños);
+
+
+    /*10. Implementar una función que permita validar un valor entero, leído desde el teclado,
+    comprendido entre dos límites que introduciremos como parámetro. (Ejm: Dia entre 1..31,
+    Mes entre 1..12)*/
+
+    System.out.println("Escriba un rango de los numeros(minimo y maximo): ");
+    int primerdato = scn.nextInt();
+    int segudnodato = scn.nextInt();
+    int medio;
+        while(true) {
+            System.out.println("Valor no invalido intentelo de nuevo");
+            medio = scn.nextInt();
+            if (medio < primerdato || medio >= segudnodato) {
+                System.out.println("Valor inválido, intente de nuevo.");
+
+            } else {
+                System.out.println("Valor aceptado: " + medio);
+                break;
+            }
+        }
+
+    /*11. Escriba un programa en Java que permita al usuario ingresar cualquier número de
+    valores de punto flotante de doble precisión no negativos. El usuario finaliza la lista de
+    entrada con cualquier valor negativo. Luego, el programa imprime la suma, el promedio
+    (media aritmética), el máximo y el mínimo de los valores ingresados. El valor negativo final
+    no se utiliza en los cálculos. Si el primer número que proporciona el usuario es negativo, el
+    programa simplemente imprime el texto NO SE PROPORCIONAN NÚMEROS.*/
+        Float num = 0.0F;
+        Float acu = 0.0F;
+        Integer cant = 0;
+        Float maxx = 0.0F;
+        Float minx = 0.0F;
+
+        while (true) {
+            System.out.println("Ingresa un numero decimal: ");
+            num = scn.nextFloat();
+
+            if (num < 0.0F) {
+                break;
+            }
+            if (num > maxx || cant == 0) {
+                maxx = num;
+            }
+            if (num < minx || cant == 0) {
+                minx = num;
+            }
+            acu+=num;
+            cant++;
+        }
+        System.out.println("La media es " + acu/cant);
+        System.out.println("La cantidad de numeros es " + cant);
+        System.out.println("El numero mayor es " + maxx);
+        System.out.println("El numero menor es " + minx);
+    /*12. Escribir una función Salario que calcule el salario de un trabajador para un número dado
+    de horas trabajadas y un salario por hora. Las horas que superen las 40 horas semanales
+    se pagarán como extras con un salario por hora de 1.5 veces el salario ordinario*/
 
     }
 }
