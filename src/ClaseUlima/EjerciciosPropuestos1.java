@@ -259,5 +259,57 @@ public class EjerciciosPropuestos1 {
     de horas trabajadas y un salario por hora. Las horas que superen las 40 horas semanales
     se pagarán como extras con un salario por hora de 1.5 veces el salario ordinario*/
 
+        System.out.println("Ingrese el numero de horas trabajadas: ");
+        int horastrab = scn.nextInt();
+        System.out.println("Ingrese el pago por horas: ");
+        int pago = scn.nextInt();
+        System.out.println("Resultados: ");
+        if(horastrab > 40){
+            System.out.println("Horas normales: 40");
+            System.out.println("Horas adicionales: " + (horastrab - 40));
+            System.out.println("Pago por horas normales: " + (40*pago));
+            System.out.println("Pago por horas adicionales: " + ((pago * 1.5)*(horastrab-40)));
+        } else if (horastrab == 40) {
+            System.out.println("Horas normales: 40");
+            System.out.println("Horas adicionales: 0");
+            System.out.println("Pago por horas normales: " + (40*pago));
+            System.out.println("Pago por horas adicionales: 0");
+
+        }else {
+            System.out.println("Horas normales: " +(horastrab));
+            System.out.println("Horas adicionales: 0");
+            System.out.println("Pago por horas normales: " + (horastrab*pago));
+            System.out.println("Pago por horas adicionales: 0");
+        }
+
+    /*13. Diseñar un algoritmo que transforme un número introducido por teclado en notación
+    decimal a notación romana. El número será entero positivo y no excederá de 3000*/
+        //no lo hice yo, no me sale xd
+        System.out.println("Escriba un numero en notacion decimal positivo y hasta el 3000: ");
+        int numero = scn.nextInt();
+
+        if (numero <= 0 || numero > 3000) {
+            System.out.println("Numero fuera de rango.");
+        } else {
+            int[] valores   = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+            String[] romanos = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < valores.length; i++) {
+                while (numero >= valores[i]) {
+                    numero -= valores[i];
+                    result.append(romanos[i]);
+                }
+            }
+
+            System.out.println("El número en romano es: " + resultado);
+        }
+
+        scn.close();
+
+
+
+
     }
 }
