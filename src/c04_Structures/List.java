@@ -43,6 +43,8 @@ public class List {
 
         //Limpiar Arraylist
         names.clear(); //forma de limpiar, te lo deja en "0"
+        // 10. Crea una clase Product y un metodo que aplique un descuento sobre su precio.
+
 
 
 

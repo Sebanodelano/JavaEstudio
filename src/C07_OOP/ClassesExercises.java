@@ -43,6 +43,12 @@ public class ClassesExercises {
             p.ShowData();
         }
 
+        var product = new Product("Electrodomestico" , 1243,10);
+        System.out.println(product); // usa toString()
+        System.out.println("Precio base: " + product.getPrecio());
+        System.out.println("Precio con descuento: " + product.getPrecioConDescuento());
+
+
 
 
 
