@@ -42,6 +42,8 @@ public class ClassesExercises {
         for (Persons p : people) {
             p.ShowData();
         }
+        // 10. Crea una clase Product y un metodo que aplique un descuento sobre su precio.
+
 
         var product = new Product("Electrodomestico" , 1243,10);
         System.out.println(product); // usa toString()
@@ -57,7 +59,6 @@ public class ClassesExercises {
 
 
     }
-
 
 
 
