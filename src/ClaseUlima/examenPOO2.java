@@ -7,5 +7,9 @@ public class examenPOO2 {
         prom.totalSucursal();
         prom.totalImpresora();
 
+        problema3exam prom2 = new problema3exam(76055104,"Sebastian","GerentedeGieshas",20000);
+        prom2.ImprimirRecibo();
+
+
     }
 }
