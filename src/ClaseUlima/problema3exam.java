@@ -12,6 +12,7 @@ public class problema3exam {
             this.DNI = 0;
         }else{
             this.DNI = DNI;
+
         }
         this.nombre = nombre;
         this.cargo = cargo;
